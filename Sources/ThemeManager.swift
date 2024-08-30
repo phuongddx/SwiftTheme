@@ -12,13 +12,14 @@ public let ThemeUpdateNotification = "ThemeUpdateNotification"
 
 public enum ThemePath {
     
+    case resourceBundle
     case mainBundle
     case sandbox(Foundation.URL)
     
     public var URL: Foundation.URL? {
         switch self {
-        case .mainBundle        : return nil
         case .sandbox(let path) : return path
+        default: return nil
         }
     }
     
@@ -32,6 +33,8 @@ public enum ThemePath {
     
     private func filePath(name: String, ofType type: String) -> String? {
         switch self {
+        case .resourceBundle:
+            return Bundle.resourceBundle.path(forResource: name, ofType: type)
         case .mainBundle:
             return Bundle.main.path(forResource: name, ofType: type)
         case .sandbox(let path):
@@ -40,6 +43,17 @@ public enum ThemePath {
             return url.path
         }
     }
+}
+
+private class LocalBundle {}
+public extension Bundle {
+    static let resourceBundle: Bundle = {
+        #if SWIFT_PACKAGE
+        return .module
+        #else
+        return Bundle(for: LocalBundle.self)
+        #endif
+    }()
 }
 
 @objc public final class ThemeManager: NSObject {
