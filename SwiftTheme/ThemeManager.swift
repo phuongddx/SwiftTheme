@@ -42,17 +42,6 @@ public enum ThemePath {
     }
 }
 
-private class LocalBundle {}
-public extension Bundle {
-    static let resourceBundle: Bundle = {
-        #if SWIFT_PACKAGE
-        return .module
-        #else
-        return Bundle(for: LocalBundle.self)
-        #endif
-    }()
-}
-
 @objc public final class ThemeManager: NSObject {
     
     @objc public static var animationDuration = 0.3
