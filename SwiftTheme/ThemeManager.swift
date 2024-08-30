@@ -12,7 +12,6 @@ public let ThemeUpdateNotification = "ThemeUpdateNotification"
 
 public enum ThemePath {
     
-    case resourceBundle
     case mainBundle
     case sandbox(Foundation.URL)
     
@@ -33,8 +32,6 @@ public enum ThemePath {
     
     private func filePath(name: String, ofType type: String) -> String? {
         switch self {
-        case .resourceBundle:
-            return Bundle.resourceBundle.path(forResource: name, ofType: type)
         case .mainBundle:
             return Bundle.main.path(forResource: name, ofType: type)
         case .sandbox(let path):
