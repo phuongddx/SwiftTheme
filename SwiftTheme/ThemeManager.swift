@@ -12,7 +12,7 @@ public let ThemeUpdateNotification = "ThemeUpdateNotification"
 
 public enum ThemePath {
     
-    case mainBundle
+    case bundle
     case sandbox(Foundation.URL)
     
     public var URL: Foundation.URL? {
@@ -22,18 +22,19 @@ public enum ThemePath {
         }
     }
     
-    public func plistPath(name: String) -> String? {
-        return filePath(name: name, ofType: "plist")
+    public func plistPath(with bundle: Bundle, name: String) -> String? {
+        return filePath(with: bundle, name: name, ofType: "plist")
     }
     
-    public func jsonPath(name: String) -> String? {
-        return filePath(name: name, ofType: "json")
+    public func jsonPath(with bundle: Bundle, name: String) -> String? {
+        return filePath(with: bundle, name: name, ofType: "json")
     }
-    
-    private func filePath(name: String, ofType type: String) -> String? {
+
+    private func filePath(with bundle: Bundle,
+                          name: String, ofType type: String) -> String? {
         switch self {
-        case .mainBundle:
-            return Bundle.main.path(forResource: name, ofType: type)
+        case .bundle:
+            return bundle.path(forResource: name, ofType: type)
         case .sandbox(let path):
             let name = name.hasSuffix(".\(type)") ? name : "\(name).\(type)"
             let url = path.appendingPathComponent(name)
@@ -60,8 +61,9 @@ public extension ThemeManager {
         NotificationCenter.default.post(name: Notification.Name(rawValue: ThemeUpdateNotification), object: nil)
     }
     
-    class func setTheme(plistName: String, path: ThemePath) {
-        guard let plistPath = path.plistPath(name: plistName) else {
+    class func setTheme(bundle: Bundle,
+                        plistName: String, path: ThemePath) {
+        guard let plistPath = path.plistPath(with: bundle, name: plistName) else {
             print("SwiftTheme WARNING: Can't find plist '\(plistName)' at: \(path)")
             return
         }
@@ -72,8 +74,8 @@ public extension ThemeManager {
         self.setTheme(dict: plistDict, path: path)
     }
     
-    class func setTheme(jsonName: String, path: ThemePath) {
-        guard let jsonPath = path.jsonPath(name: jsonName) else {
+    class func setTheme(with bundle: Bundle, jsonName: String, path: ThemePath) {
+        guard let jsonPath = path.jsonPath(with: bundle, name: jsonName) else {
             print("SwiftTheme WARNING: Can't find json '\(jsonName)' at: \(path)")
             return
         }
