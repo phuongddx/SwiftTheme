@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F29694252C821DD3002066B1 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = F29694032C821DD2002066B1 /* Empty.xib */; };
 		F29694262C821DD3002066B1 /* UIRefreshControl+TitleAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29694052C821DD2002066B1 /* UIRefreshControl+TitleAttributes.swift */; };
 		F29694272C821DD3002066B1 /* ThemeAttributedStringPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29694062C821DD2002066B1 /* ThemeAttributedStringPicker.swift */; };
 		F29694282C821DD3002066B1 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29694072C821DD2002066B1 /* NSObject+Theme.swift */; };
@@ -39,11 +38,18 @@
 		F29694422C821DD3002066B1 /* ThemeAnyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29694212C821DD2002066B1 /* ThemeAnyPicker.swift */; };
 		F29694432C821DD3002066B1 /* UIKit+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29694222C821DD3002066B1 /* UIKit+Theme.swift */; };
 		F29694442C821DD3002066B1 /* ThemeStatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29694232C821DD3002066B1 /* ThemeStatePicker.swift */; };
+		F2C506092D0298CA002AF800 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C506082D0298CA002AF800 /* UIView.swift */; };
+		F2C5060B2D0298FF002AF800 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5060A2D0298FF002AF800 /* UIApplication.swift */; };
+		F2C5060D2D029A4B002AF800 /* UIBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5060C2D029A4B002AF800 /* UIBarItem.swift */; };
+		F2C5060F2D029AAA002AF800 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5060E2D029AAA002AF800 /* UIBarButtonItem.swift */; };
+		F2C506112D029ACA002AF800 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C506102D029ACA002AF800 /* UILabel.swift */; };
+		F2C506132D029DD5002AF800 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C506122D029DD5002AF800 /* UINavigationBar.swift */; };
+		F2C506152D029DF9002AF800 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C506142D029DF9002AF800 /* UITabBar.swift */; };
+		F2C506182D029F1B002AF800 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C506172D029F1B002AF800 /* CALayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F29693F82C821A59002066B1 /* SwiftTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F29694032C821DD2002066B1 /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		F29694052C821DD2002066B1 /* UIRefreshControl+TitleAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+TitleAttributes.swift"; sourceTree = "<group>"; };
 		F29694062C821DD2002066B1 /* ThemeAttributedStringPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeAttributedStringPicker.swift; sourceTree = "<group>"; };
 		F29694072C821DD2002066B1 /* NSObject+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Theme.swift"; sourceTree = "<group>"; };
@@ -54,7 +60,6 @@
 		F296940C2C821DD2002066B1 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F296940D2C821DD2002066B1 /* ThemeImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeImagePicker.swift; sourceTree = "<group>"; };
 		F296940E2C821DD2002066B1 /* ThemeManager+Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThemeManager+Plist.swift"; sourceTree = "<group>"; };
-		F296940F2C821DD2002066B1 /* ThemeManager+OC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThemeManager+OC.swift"; sourceTree = "<group>"; };
 		F29694102C821DD2002066B1 /* ThemeManager+Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThemeManager+Index.swift"; sourceTree = "<group>"; };
 		F29694112C821DD2002066B1 /* ThemeBlurEffectPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBlurEffectPicker.swift; sourceTree = "<group>"; };
 		F29694122C821DD2002066B1 /* ThemeKeyboardAppearancePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeKeyboardAppearancePicker.swift; sourceTree = "<group>"; };
@@ -75,6 +80,14 @@
 		F29694212C821DD2002066B1 /* ThemeAnyPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeAnyPicker.swift; sourceTree = "<group>"; };
 		F29694222C821DD3002066B1 /* UIKit+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Theme.swift"; sourceTree = "<group>"; };
 		F29694232C821DD3002066B1 /* ThemeStatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeStatePicker.swift; sourceTree = "<group>"; };
+		F2C506082D0298CA002AF800 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		F2C5060A2D0298FF002AF800 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		F2C5060C2D029A4B002AF800 /* UIBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarItem.swift; sourceTree = "<group>"; };
+		F2C5060E2D029AAA002AF800 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
+		F2C506102D029ACA002AF800 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		F2C506122D029DD5002AF800 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		F2C506142D029DF9002AF800 /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
+		F2C506172D029F1B002AF800 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +120,22 @@
 		F29693FA2C821A59002066B1 /* SwiftTheme */ = {
 			isa = PBXGroup;
 			children = (
+				F2C506072D0298B6002AF800 /* ThemeColorSet */,
+				F2C506042D029669002AF800 /* Managers */,
+				F2C506032D029624002AF800 /* Pickers */,
 				F296940B2C821DD2002066B1 /* NSAttributedString+Merge.swift */,
 				F29694072C821DD2002066B1 /* NSObject+Theme.swift */,
-				F29694042C821DD2002066B1 /* Resources */,
+				F296940C2C821DD2002066B1 /* UIColorExtension.swift */,
+				F296941D2C821DD2002066B1 /* UILabel+TextAttributes.swift */,
+				F29694052C821DD2002066B1 /* UIRefreshControl+TitleAttributes.swift */,
+				F296941F2C821DD2002066B1 /* UITextField+PlaceholderAttributes.swift */,
+			);
+			path = SwiftTheme;
+			sourceTree = "<group>";
+		};
+		F2C506032D029624002AF800 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
 				F29694142C821DD2002066B1 /* ThemeActivityIndicatorViewStylePicker.swift */,
 				F29694212C821DD2002066B1 /* ThemeAnyPicker.swift */,
 				F29694062C821DD2002066B1 /* ThemeAttributedStringPicker.swift */,
@@ -122,33 +148,50 @@
 				F29694162C821DD2002066B1 /* ThemeFontPicker.swift */,
 				F296940D2C821DD2002066B1 /* ThemeImagePicker.swift */,
 				F29694122C821DD2002066B1 /* ThemeKeyboardAppearancePicker.swift */,
-				F29694152C821DD2002066B1 /* ThemeManager.swift */,
-				F29694102C821DD2002066B1 /* ThemeManager+Index.swift */,
-				F296940F2C821DD2002066B1 /* ThemeManager+OC.swift */,
-				F296940E2C821DD2002066B1 /* ThemeManager+Plist.swift */,
 				F296940A2C821DD2002066B1 /* ThemeNavigationBarAppearancePicker.swift */,
-				F296941E2C821DD2002066B1 /* ThemePicker.swift */,
 				F29694082C821DD2002066B1 /* ThemeScrollViewIndicatorStylePicker.swift */,
 				F29694232C821DD3002066B1 /* ThemeStatePicker.swift */,
 				F29694182C821DD2002066B1 /* ThemeStatusBarStylePicker.swift */,
 				F29694092C821DD2002066B1 /* ThemeStringAttributesPicker.swift */,
 				F296941A2C821DD2002066B1 /* ThemeTabBarAppearancePicker.swift */,
 				F296941C2C821DD2002066B1 /* ThemeVisualEffectPicker.swift */,
-				F296940C2C821DD2002066B1 /* UIColorExtension.swift */,
-				F29694222C821DD3002066B1 /* UIKit+Theme.swift */,
-				F296941D2C821DD2002066B1 /* UILabel+TextAttributes.swift */,
-				F29694052C821DD2002066B1 /* UIRefreshControl+TitleAttributes.swift */,
-				F296941F2C821DD2002066B1 /* UITextField+PlaceholderAttributes.swift */,
+				F296941E2C821DD2002066B1 /* ThemePicker.swift */,
 			);
-			path = SwiftTheme;
+			path = Pickers;
 			sourceTree = "<group>";
 		};
-		F29694042C821DD2002066B1 /* Resources */ = {
+		F2C506042D029669002AF800 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				F29694032C821DD2002066B1 /* Empty.xib */,
+				F29694152C821DD2002066B1 /* ThemeManager.swift */,
+				F29694102C821DD2002066B1 /* ThemeManager+Index.swift */,
+				F296940E2C821DD2002066B1 /* ThemeManager+Plist.swift */,
 			);
-			path = Resources;
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F2C506072D0298B6002AF800 /* ThemeColorSet */ = {
+			isa = PBXGroup;
+			children = (
+				F2C506162D029F08002AF800 /* CALayer */,
+				F2C506082D0298CA002AF800 /* UIView.swift */,
+				F2C5060A2D0298FF002AF800 /* UIApplication.swift */,
+				F2C5060C2D029A4B002AF800 /* UIBarItem.swift */,
+				F2C5060E2D029AAA002AF800 /* UIBarButtonItem.swift */,
+				F2C506102D029ACA002AF800 /* UILabel.swift */,
+				F2C506122D029DD5002AF800 /* UINavigationBar.swift */,
+				F2C506142D029DF9002AF800 /* UITabBar.swift */,
+				F29694222C821DD3002066B1 /* UIKit+Theme.swift */,
+			);
+			path = ThemeColorSet;
+			sourceTree = "<group>";
+		};
+		F2C506162D029F08002AF800 /* CALayer */ = {
+			isa = PBXGroup;
+			children = (
+				F2C506172D029F1B002AF800 /* CALayer.swift */,
+			);
+			path = CALayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +233,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1540;
+				ORGANIZATIONNAME = AAVN;
 				TargetAttributes = {
 					F29693F72C821A59002066B1 = {
 						CreatedOnToolsVersion = 15.4;
@@ -220,7 +264,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F29694252C821DD3002066B1 /* Empty.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,15 +279,20 @@
 				F29694292C821DD3002066B1 /* ThemeScrollViewIndicatorStylePicker.swift in Sources */,
 				F296943B2C821DD3002066B1 /* ThemeTabBarAppearancePicker.swift in Sources */,
 				F29694262C821DD3002066B1 /* UIRefreshControl+TitleAttributes.swift in Sources */,
+				F2C506092D0298CA002AF800 /* UIView.swift in Sources */,
 				F296942D2C821DD3002066B1 /* UIColorExtension.swift in Sources */,
 				F296942C2C821DD3002066B1 /* NSAttributedString+Merge.swift in Sources */,
 				F29694332C821DD3002066B1 /* ThemeKeyboardAppearancePicker.swift in Sources */,
 				F296942E2C821DD3002066B1 /* ThemeImagePicker.swift in Sources */,
+				F2C506182D029F1B002AF800 /* CALayer.swift in Sources */,
 				F29694412C821DD3002066B1 /* ThemeColorPicker.swift in Sources */,
+				F2C506132D029DD5002AF800 /* UINavigationBar.swift in Sources */,
+				F2C5060D2D029A4B002AF800 /* UIBarItem.swift in Sources */,
 				F296942F2C821DD3002066B1 /* ThemeManager+Plist.swift in Sources */,
 				F296943D2C821DD3002066B1 /* ThemeVisualEffectPicker.swift in Sources */,
 				F29694392C821DD3002066B1 /* ThemeStatusBarStylePicker.swift in Sources */,
 				F29694442C821DD3002066B1 /* ThemeStatePicker.swift in Sources */,
+				F2C506152D029DF9002AF800 /* UITabBar.swift in Sources */,
 				F296943E2C821DD3002066B1 /* UILabel+TextAttributes.swift in Sources */,
 				F296943A2C821DD3002066B1 /* ThemeDictionaryPicker.swift in Sources */,
 				F296942A2C821DD3002066B1 /* ThemeStringAttributesPicker.swift in Sources */,
@@ -253,14 +301,16 @@
 				F29694372C821DD3002066B1 /* ThemeFontPicker.swift in Sources */,
 				F29694382C821DD3002066B1 /* ThemeCGFloatPicker.swift in Sources */,
 				F29694432C821DD3002066B1 /* UIKit+Theme.swift in Sources */,
+				F2C506112D029ACA002AF800 /* UILabel.swift in Sources */,
 				F29694322C821DD3002066B1 /* ThemeBlurEffectPicker.swift in Sources */,
 				F29694422C821DD3002066B1 /* ThemeAnyPicker.swift in Sources */,
-				F29694302C821DD3002066B1 /* ThemeManager+OC.swift in Sources */,
 				F296943C2C821DD3002066B1 /* ThemeBarStylePicker.swift in Sources */,
 				F29694402C821DD3002066B1 /* UITextField+PlaceholderAttributes.swift in Sources */,
 				F29694352C821DD3002066B1 /* ThemeActivityIndicatorViewStylePicker.swift in Sources */,
+				F2C5060F2D029AAA002AF800 /* UIBarButtonItem.swift in Sources */,
 				F296943F2C821DD3002066B1 /* ThemePicker.swift in Sources */,
 				F29694282C821DD3002066B1 /* NSObject+Theme.swift in Sources */,
+				F2C5060B2D0298FF002AF800 /* UIApplication.swift in Sources */,
 				F296942B2C821DD3002066B1 /* ThemeNavigationBarAppearancePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +458,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,11 +470,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ios-theme-showcase.app.SwiftTheme";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -443,7 +497,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,10 +509,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ios-theme-showcase.app.SwiftTheme";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

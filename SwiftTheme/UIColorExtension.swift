@@ -9,14 +9,19 @@
 import UIKit
 
 /**
- MissingHashMarkAsPrefix:   "Invalid RGB string, missing '#' as prefix"
- UnableToScanHexValue:      "Scan hex error"
- MismatchedHexStringLength: "Invalid RGB string, number of characters after '#' should be either 3, 4, 6 or 8"
+ Errors that can occur when parsing a string representation of a `UIColor`.
+ 
+ - `missingHashMarkAsPrefix`: The string is missing the `#` prefix.
+ - `unableToScanHexValue`: The hex value in the string could not be scanned.
+ - `mismatchedHexStringLength`: The number of characters after the `#` prefix is not 3, 4, 6, or 8.
+ - `invalidRGBAFormat`: The string does not contain a valid RGBA format.
  */
-public enum UIColorInputError : Error {
-    case missingHashMarkAsPrefix,
-    unableToScanHexValue,
-    mismatchedHexStringLength
+
+public enum UIColorInputError: Error {
+    case missingHashMarkAsPrefix
+    case unableToScanHexValue
+    case mismatchedHexStringLength
+    case invalidRGBAFormat
 }
 
 @objc extension UIColor {
@@ -82,11 +87,31 @@ public enum UIColorInputError : Error {
     }
     
     /**
-     The rgba string representation of color with alpha of the form #RRGGBBAA/#RRGGBB, throws error.
-     
-     - parameter rgba: String value.
-     */
+        Initializes a UIColor from an RGBA string representation.
+
+        - Parameter rgba: A string representing the color in one of the supported formats.
+
+        ## Supported Formats:
+        - `#RRGGBB`: A hexadecimal representation of the color without alpha.
+        - `#RRGGBBAA`: A hexadecimal representation of the color with alpha.
+        - `rgba(r, g, b, a)`: A functional representation of the color with red, green, blue, and alpha values.
+
+        - Throws: An error if the provided string is not in a supported format or cannot be parsed.
+
+        ## Usage:
+        ```swift
+        let color = UIColor(rgba: "#FF5733")
+        let colorWithAlpha = UIColor(rgba: "#FF573380")
+        let colorFromRGBA = UIColor(rgba: "rgba(255, 87, 51, 0.5)")
+        ```
+    */
     public convenience init(rgba_throws rgba: String) throws {
+        // Check if it's an rgba() format
+        if rgba.hasPrefix("rgba(") && rgba.hasSuffix(")") {
+            try self.init(rgbaFunction: rgba)
+            return
+        }
+
         guard rgba.hasPrefix("#") else {
             throw UIColorInputError.missingHashMarkAsPrefix
         }
@@ -97,7 +122,7 @@ public enum UIColorInputError : Error {
         guard Scanner(string: hexString).scanHexInt32(&hexValue) else {
             throw UIColorInputError.unableToScanHexValue
         }
-        
+
         switch (hexString.count) {
         case 3:
             self.init(hex3: UInt16(hexValue))
@@ -111,7 +136,60 @@ public enum UIColorInputError : Error {
             throw UIColorInputError.mismatchedHexStringLength
         }
     }
-    
+
+    /// Initialize UIColor from rgba string
+    /// Supports formats:
+    /// - #RRGGBB
+    /// - #RRGGBBAA
+    /// - rgba(r, g, b, a)
+    public convenience init(rgba: String) throws {
+        // Check if it's an rgba() format
+        if rgba.hasPrefix("rgba(") && rgba.hasSuffix(")") {
+            try self.init(rgbaFunction: rgba)
+            return
+        }
+
+        // Check if it's a hex color
+        try self.init(rgba_throws: rgba)
+    }
+
+    /// Initialize UIColor from rgba function string
+    /// - Parameter rgbaFunction: String in format "rgba(r, g, b, a)"
+    /// - Throws: UIColorInputError if parsing fails
+    private convenience init(rgbaFunction rgba: String) throws {
+        // Remove "rgba(" and ")" and split by comma
+        let componentsString = rgba
+            .replacingOccurrences(of: "rgba(", with: "")
+            .replacingOccurrences(of: ")", with: "")
+        
+        let components = componentsString
+            .split(separator: ",")
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+        
+        // Ensure we have 4 components (R, G, B, Alpha)
+        guard components.count == 4 else {
+            throw UIColorInputError.invalidRGBAFormat
+        }
+        
+        // Parse numeric values
+        guard
+            let red = Float(components[0]),
+            let green = Float(components[1]),
+            let blue = Float(components[2]),
+            let alpha = Float(components[3])
+        else {
+            throw UIColorInputError.invalidRGBAFormat
+        }
+        
+        // Create color
+        self.init(
+            red: CGFloat(red / 255.0),
+            green: CGFloat(green / 255.0),
+            blue: CGFloat(blue / 255.0),
+            alpha: CGFloat(alpha)
+        )
+    }
+
     /**
      The rgba string representation of color with alpha of the form #RRGGBBAA/#RRGGBB, fails to default color.
      

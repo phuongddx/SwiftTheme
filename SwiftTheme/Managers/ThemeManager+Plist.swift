@@ -48,20 +48,21 @@ import UIKit
     }
     
     public class func image(for keyPath: String) -> UIImage? {
-        guard let imageName = string(for: keyPath) else { return nil }
-        if let filePath = currentThemePath?.URL?.appendingPathComponent(imageName).path {
-            guard let image = UIImage(contentsOfFile: filePath) else {
-                print("SwiftTheme WARNING: Not found image at file path: \(filePath)")
-                return nil
-            }
-            return image
-        } else {
-            guard let image = UIImage(named: imageName) else {
-                print("SwiftTheme WARNING: Not found image name at main bundle: \(imageName)")
-                return nil
-            }
-            return image
-        }
+//        guard let imageName = string(for: keyPath) else { return nil }
+//        if let filePath = currentThemePath?.URL?.appendingPathComponent(imageName).path {
+//            guard let image = UIImage(contentsOfFile: filePath) else {
+//                print("SwiftTheme WARNING: Not found image at file path: \(filePath)")
+//                return nil
+//            }
+//            return image
+//        } else {
+//            guard let image = UIImage(named: imageName) else {
+//                print("SwiftTheme WARNING: Not found image name at main bundle: \(imageName)")
+//                return nil
+//            }
+//            return image
+//        }
+        nil
     }
     
     public class func font(for keyPath: String) -> UIFont? {
